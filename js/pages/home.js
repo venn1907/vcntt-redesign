@@ -1,4 +1,4 @@
-﻿import { escapeHtml, formatDate } from "../core/dom.js";
+﻿import { appUrl, escapeHtml, formatDate } from "../core/dom.js";
 import { eventsData } from "../data/events.js";
 
 const NOTICE_TAB_ITEMS = [
@@ -9,7 +9,7 @@ const NOTICE_TAB_ITEMS = [
 ];
 
 function detailHref(id) {
-  return `/pages/news/detail.html?id=${encodeURIComponent(id)}`;
+  return appUrl(`pages/news/detail.html?id=${encodeURIComponent(id)}`);
 }
 
 function normalizeText(value) {
@@ -49,8 +49,8 @@ function renderLandingSlideshow(newsData) {
         .map(
           (item) => `
         <article class="vc-slide">
-          <img class="vc-slide-media" src="${escapeHtml(item.cover)}" alt="${escapeHtml(item.title)}" loading="lazy"
-            onerror="this.src='/assets/img/bg-landing.jpg'" />
+          <img class="vc-slide-media" src="${escapeHtml(appUrl(item.cover))}" alt="${escapeHtml(item.title)}" loading="lazy"
+            onerror="this.src='${appUrl("assets/img/bg-landing.jpg")}'" />
           <div class="vc-slide-overlay" aria-hidden="true"></div>
           <div class="vc-slide-content">
             <p class="vc-slide-meta">${escapeHtml(formatDate(item.date))} • ${escapeHtml(item.category)}</p>
@@ -162,7 +162,7 @@ function renderNewsListCards(newsData) {
     ? `
       <article class="vc-news-card vc-news-card--feature">
         <img class="vc-news-thumb" src="${escapeHtml(featured.cover)}" alt="${escapeHtml(featured.title)}" loading="lazy"
-          onerror="this.src='/assets/img/bg-landing.jpg'" />
+          onerror="this.src='${appUrl("assets/img/bg-landing.jpg")}'" />
         <div>
           <p class="vc-news-meta">${escapeHtml(formatDate(featured.date))} • ${escapeHtml(featured.category)}</p>
           <h3 class="vc-news-title">
@@ -340,3 +340,4 @@ export function initHome(newsData) {
   renderNoticeTabs(noticeIndex);
   renderEvents(eventsData);
 }
+

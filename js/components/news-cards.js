@@ -1,7 +1,7 @@
-﻿import { escapeHtml, formatDate } from "../core/dom.js";
+﻿import { appUrl, escapeHtml, formatDate } from "../core/dom.js";
 
 function detailHref(id) {
-  return `/pages/news/detail.html?id=${encodeURIComponent(id)}`;
+  return appUrl(`pages/news/detail.html?id=${encodeURIComponent(id)}`);
 }
 
 export function renderNewsCards(targetId, items, options = {}) {
@@ -25,8 +25,8 @@ export function renderNewsCards(targetId, items, options = {}) {
       <article class="card card-hover h-100">
         <div class="card-header p-0 mx-3 mt-3 position-relative">
           <a class="d-block" href="${href}" aria-label="Đọc bài: ${title}">
-            <img class="thumb" src="${escapeHtml(item.cover)}" alt="${title}" loading="lazy"
-              onerror="this.src='/assets/img/bg-landing.jpg'">
+            <img class="thumb" src="${escapeHtml(appUrl(item.cover))}" alt="${title}" loading="lazy"
+              onerror="this.src='${appUrl("assets/img/bg-landing.jpg")}'">
           </a>
         </div>
         <div class="card-body pt-3">
@@ -52,3 +52,5 @@ export function renderNewsCards(targetId, items, options = {}) {
     })
     .join("");
 }
+
+

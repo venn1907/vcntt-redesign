@@ -1,4 +1,4 @@
-﻿import { qs, escapeHtml, formatDate } from "../core/dom.js";
+﻿import { appUrl, qs, escapeHtml, formatDate } from "../core/dom.js";
 import { renderNewsCards } from "../components/news-cards.js";
 
 export function initNewsDetail(newsData) {
@@ -14,8 +14,8 @@ export function initNewsDetail(newsData) {
       <header class="vc-news-detail-header">
         <nav aria-label="Breadcrumb" class="vc-news-breadcrumb mb-3">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="/index.html">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="/pages/news/index.html">Tin tức</a></li>
+            <li class="breadcrumb-item"><a href="${appUrl("index.html")}">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="${appUrl("pages/news/index.html")}">Tin tức</a></li>
             <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
           </ol>
         </nav>
@@ -36,8 +36,8 @@ export function initNewsDetail(newsData) {
       </header>
 
       <img class="vc-news-detail-cover mb-4"
-        src="${escapeHtml(item.cover)}" alt="${escapeHtml(item.title)}" loading="lazy"
-        onerror="this.src='/assets/img/bg-landing.jpg'"/>
+        src="${escapeHtml(appUrl(item.cover))}" alt="${escapeHtml(item.title)}" loading="lazy"
+        onerror="this.src='${appUrl("assets/img/bg-landing.jpg")}'"/>
 
       <div class="article-container mx-auto">
         <div class="article-content">
@@ -65,7 +65,7 @@ export function initNewsDetail(newsData) {
       <div class="vc-news-related-panel">
         <div class="vc-news-related-head">
           <h2>Bài liên quan</h2>
-          <a href="/pages/news/index.html">Xem tất cả</a>
+          <a href="${appUrl("pages/news/index.html")}">Xem tất cả</a>
         </div>
         <div class="row g-4" id="related-grid"></div>
       </div>
@@ -77,3 +77,5 @@ export function initNewsDetail(newsData) {
     titleClass: "mb-0 clamp-2",
   });
 }
+
+

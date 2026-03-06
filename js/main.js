@@ -7,8 +7,8 @@ import { initNewsDetail } from "./pages/news-detail.js";
 import { initHeaderCollapse } from "./core/header-scroll.js";
 
 (async function boot() {
-  await inject("#site-header", "/layouts/header.html");
-  await inject("#site-footer", "/layouts/footer.html");
+  await inject("#site-header", "layouts/header.html");
+  await inject("#site-footer", "layouts/footer.html");
 
   initHeaderCollapse();
   setActiveNav();

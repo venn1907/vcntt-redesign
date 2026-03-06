@@ -1,11 +1,11 @@
-export const newsData = [
+﻿export const newsData = [
   {
     id: "1",
     title: "Viện Công nghệ số tổ chức đối thoại giữa lãnh đạo và sinh viên năm 2026",
     date: "2026-02-25",
     category: "Tin tổng hợp",
     views: 532,
-    cover: "/assets/img/banner.jpg",
+    cover: "assets/img/banner.jpg",
     excerpt: "Hoạt động đối thoại nhằm lắng nghe ý kiến sinh viên và nâng cao chất lượng đào tạo.",
   },
   {
@@ -14,7 +14,7 @@ export const newsData = [
     date: "2026-02-20",
     category: "Thông báo",
     views: 301,
-    cover: "/assets/img/bg-smart-home-1.jpg",
+    cover: "assets/img/bg-smart-home-1.jpg",
     excerpt: "Cập nhật lịch học, thời khóa biểu và các mốc quan trọng của học kỳ.",
   },
   {
@@ -23,7 +23,7 @@ export const newsData = [
     date: "2026-02-15",
     category: "Sự kiện",
     views: 812,
-    cover: "/assets/img/vr-bg.jpg",
+    cover: "assets/img/vr-bg.jpg",
     excerpt: "Chia sẻ bởi khách mời từ doanh nghiệp, định hướng nghề nghiệp và kỹ năng.",
   },
   {
@@ -32,7 +32,7 @@ export const newsData = [
     date: "2026-02-10",
     category: "Tuyển sinh",
     views: 980,
-    cover: "/assets/img/bg-presentation.jpg",
+    cover: "assets/img/bg-presentation.jpg",
     excerpt: "Các khóa học thực chiến: Web, Mobile, Data, AI... phù hợp sinh viên.",
   },
   {
@@ -41,7 +41,7 @@ export const newsData = [
     date: "2026-02-05",
     category: "Hợp tác",
     views: 420,
-    cover: "/assets/img/bg2.jpg",
+    cover: "assets/img/bg2.jpg",
     excerpt: "Kết nối doanh nghiệp giúp sinh viên có cơ hội thực tập, trải nghiệm dự án.",
   },
   {
@@ -50,7 +50,7 @@ export const newsData = [
     date: "2026-01-28",
     category: "Sinh viên",
     views: 650,
-    cover: "/assets/img/city-profile.jpg",
+    cover: "assets/img/city-profile.jpg",
     excerpt: "Sân chơi cho sinh viên thử sức với bài toán thực tế, rèn teamwork.",
   },
 ];
