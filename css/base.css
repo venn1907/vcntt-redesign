@@ -554,3 +554,56 @@ select:focus-visible {
     max-height: 72vh;
   }
 }
+
+.vc-scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(11, 94, 215, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--vc-primary-600);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.14);
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+.vc-scroll-top .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.vc-scroll-top:hover,
+.vc-scroll-top:focus-visible {
+  background: #fff;
+  border-color: rgba(11, 94, 215, 0.5);
+  color: var(--vc-primary);
+}
+
+.vc-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 575.98px) {
+  .vc-scroll-top {
+    right: 12px;
+    bottom: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+}
